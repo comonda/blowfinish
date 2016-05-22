@@ -4,7 +4,7 @@ from .models import Question, Choice
 from django.template import RequestContext, loader
 from django.http import Http404
 from django.core.urlresolvers import reverse
-from django.views import generic
+
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
@@ -15,8 +15,8 @@ class IndexView(generic.ListView):
         return Question.objects.order_by('-pub_date')[:5]
   
   
-class DetailView(generic.DetailView):
-    model = Question
+class DetaiView(generic.DetailView)
+    model = Qusetion
     template_name = 'polls/detail.html'
  
  

@@ -7,7 +7,7 @@ from django.utils import timezone
 # Create your models here.
 class Question(models.Model):
     def __str__(self):
-        class_name = "This is " + self.question_text
+        class_name = self.question_text
         return class_name
 
     question_text = models.CharField(max_length = 200)
@@ -22,8 +22,7 @@ class Question(models.Model):
 
 class Choice(models.Model):
     def __str__(self):
-        class_name = "this is " + self.choice_text
-        return class_name
+        return self.choice_text
 
     question = models.ForeignKey(Question)
     choice_text = models.CharField(max_length = 200)
